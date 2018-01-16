@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<form action="/" method="post">
+    <input type="text" name="name" value=""  placeholder="Input a Name"/>
+    <input type="submit"  value="Add" />
+</form>
+@if (Session["Names"]!=null)
+{
+
+<table>
+    <tr>
+        <th>Name</th>
+    </tr>
+    @foreach (var item in (List<string>)Session["Names"])
+    {
+    <tr>
+        <td>@item</td>
+    </tr>
+    }
+</table>
+}
